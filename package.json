@@ -4,6 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.18.2",
+    "babel-jest": "^28.1.0",
+    "jest": "^28.1.0",
     "typescript": "^4.7.2"
+  },
+  "scripts": {
+    "start": "babel-node index.ts",
+    "test": "jest",
+    "t-c": "jest --coverage"
   }
 }
