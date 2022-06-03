@@ -1,4 +1,4 @@
-const isEqual = (
+export const isEqual = (
   obj1: Record<string, any>,
   obj2: Record<string, any>
 ): boolean => {
@@ -10,6 +10,14 @@ const isEqual = (
   }
 
   for (let objKey of obj1Keys) {
+    if (typeof obj1[objKey] === "object") {
+      if (!isEqual(obj1[objKey], obj2[objKey])) {
+        return false;
+      }
+
+      return true;
+    }
+
     if (obj1[objKey] !== obj2[objKey]) {
       return false;
     }
